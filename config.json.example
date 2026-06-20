@@ -1,0 +1,78 @@
+{
+  "haUrl": "http://YOUR_HA_IP:8123",
+  "haUrlLocal": "http://YOUR_LOCAL_HA_IP:8123",
+  "token": "YOUR_LONG_LIVED_ACCESS_TOKEN",
+
+  "_comment": "Copy this file to config.json and fill in your values. Never commit config.json.",
+
+  "entities": {
+    "_comment": "Override only the entity IDs that differ from the defaults. Remove groups you don't have.",
+
+    "inverter": {
+      "input_power":   "sensor.huawei_solar_power_input",
+      "active_power":  "sensor.huawei_solar_active_power",
+      "daily_energy":  "sensor.huawei_solar_daily_yield",
+      "total_energy":  "sensor.huawei_solar_total_yield",
+      "efficiency":    "sensor.huawei_solar_efficiency",
+      "internal_temp": "sensor.huawei_solar_internal_temperature",
+      "pv1_voltage":   "sensor.huawei_solar_pv_voltage_1",
+      "pv1_current":   "sensor.huawei_solar_pv_current_1",
+      "pv2_voltage":   "sensor.huawei_solar_pv_voltage_2",
+      "pv2_current":   "sensor.huawei_solar_pv_current_2"
+    },
+
+    "battery": {
+      "_comment": "Remove this group entirely if you have no battery",
+      "bat_soc":             "sensor.huawei_solar_battery_state_of_capacity",
+      "bat_power":           "sensor.huawei_solar_battery_charge_discharge_power",
+      "bat_voltage":         "sensor.huawei_solar_battery_bus_voltage",
+      "bat_current":         "sensor.huawei_solar_battery_bus_current",
+      "bat_daily_charge":    "sensor.huawei_solar_battery_day_charge",
+      "bat_daily_discharge": "sensor.huawei_solar_battery_day_discharge",
+      "bat_total_charge":    "sensor.huawei_solar_battery_total_charge",
+      "bat_total_discharge": "sensor.huawei_solar_battery_total_discharge"
+    },
+
+    "meter_grid": {
+      "_comment": "Bidirectional grid meter — DDSU666-H or equivalent",
+      "meter_active_power": "sensor.huawei_solar_power_meter_active_power",
+      "meter_grid_v":       "sensor.huawei_solar_power_meter_voltage",
+      "meter_power_factor": "sensor.huawei_solar_power_meter_power_factor",
+      "meter_daily_export": "sensor.huawei_solar_daily_export",
+      "meter_daily_import": "sensor.huawei_solar_daily_import",
+      "meter_total_export": "sensor.huawei_solar_power_meter_exported",
+      "meter_total_import": "sensor.huawei_solar_power_meter_imported"
+    },
+
+    "meter_casa": {
+      "_comment": "Optional separate house consumption meter — remove if not present",
+      "meter_casa":   "sensor.house_meter_power",
+      "meter_casa_v": "sensor.house_meter_voltage",
+      "meter_casa_i": "sensor.house_meter_current"
+    },
+
+    "wallbox_ev": {
+      "_comment": "Tuya EV meter + circuit breaker switch for the EV charging point",
+      "ev_energy_total": "sensor.ev_meter_total_energy",
+      "ev_current":      "sensor.ev_meter_current",
+      "ev_voltage":      "sensor.ev_meter_voltage",
+      "ev_frequency":    "sensor.ev_meter_frequency",
+      "ev_status":       "sensor.ev_charger_status",
+      "ev_eta":          "sensor.ev_charger_eta",
+      "ev_switch":       "switch.ev_circuit_breaker"
+    },
+
+    "feyree": {
+      "_comment": "Feyree EVSE via Tuya Local — remove this group if not using Feyree",
+      "feyree_switch":      "switch.feyree_ev_charger_charging",
+      "feyree_current_set": "number.feyree_ev_charger_charging_current",
+      "feyree_power":       "sensor.feyree_ev_charger_power",
+      "feyree_current":     "sensor.feyree_ev_charger_current",
+      "feyree_voltage":     "sensor.feyree_ev_charger_voltage",
+      "feyree_energy":      "sensor.feyree_ev_charger_energy",
+      "feyree_status":      "sensor.feyree_ev_charger_status",
+      "feyree_temp":        "sensor.feyree_ev_charger_temperature",
+      "feyree_workmode":    "select.feyree_work_mode"
+    }
+  }
+}

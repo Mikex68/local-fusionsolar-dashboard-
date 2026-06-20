@@ -1,4 +1,3 @@
-[README.md](https://github.com/user-attachments/files/29159625/README.md)
 # ☀️ FusionSolar Dashboard
 
 A single-file web dashboard for real-time monitoring of **Huawei SUN2000** solar systems via Home Assistant — with Luna2000 battery, EV wallbox, Feyree EVSE and weather forecast support.
