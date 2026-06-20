@@ -1,0 +1,13 @@
+# Configurazione personale — NON committare mai questo file
+config.json
+
+# Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
